@@ -3,7 +3,7 @@
     include $pathInclude."inc/model.php";
     $usersModel = new ModelUsers();
     $errors = [
-        "emailError" => "",
+        "loginError" => "",
         "passwordError" => "",
         "identifiantError" => "",
         "champVide" => "",
@@ -19,39 +19,36 @@
         }
     }
 
-    if(isset($_POST["email"]) && isset($_POST["password"])) {
-        $email = $_POST["email"];
+    if(isset($_POST["login"]) && isset($_POST["password"])) {
+        $login = $_POST["login"];
         $password = $_POST["password"];
-        if(!empty($email) && !empty($password)) {
-            // validation email
-            if(filter_var($email, FILTER_VALIDATE_EMAIL)) {
-                // validation password : il faut qu'il contient
-                $uppercase = preg_match('@[A-Z]@', $password); // lettre en majuscule
-                $lowercase  = preg_match("@[a-z]@", $password); // lettre en minuscule
-                $number = preg_match("@[0-9]@", $password); // un numéro
-                $specialChars = preg_match("@[^\w]@", $password); // caractère spéciaux 
-                $passLength = strlen($password) >= 8 && strlen($password) < 255; // 8 caractère au min 255 au max
-                if($uppercase && $lowercase && $number && $specialChars && $passLength) {
-                    $userObject = $usersModel->userConnected($email, $password);
-                    if($userObject) {
-                        $_SESSION["login"] = $userObject;
-                        header("refresh:0");
-                        exit();
-                    } else {
-                        $errors['identifiantError'] = "votre identifiant n'est pas valide !";
-                    } 
+        if(!empty($login) && !empty($password)) {
+            // validation login
+        
+            // validation password : il faut qu'il contient
+            $uppercase = preg_match('@[A-Z]@', $password); // lettre en majuscule
+            $lowercase  = preg_match("@[a-z]@", $password); // lettre en minuscule
+            $number = preg_match("@[0-9]@", $password); // un numéro
+            $specialChars = preg_match("@[^\w]@", $password); // caractère spéciaux 
+            $passLength = strlen($password) >= 8 && strlen($password) < 255; // 8 caractère au min 255 au max
+            if($uppercase && $lowercase && $number && $specialChars && $passLength) {
+                $userObject = $usersModel->userConnected($login, $password);
+                if($userObject) {
+                    $_SESSION["login"] = $userObject;
+                    header("refresh:0");
+                    exit();
                 } else {
-                    $errors["passwordError"] = "Confirmer que le mote de passe contient :<br> au moins 1 caractère en majuscule, en minuscule, un muméro, caractère spéciaux, 8 caractère au min, 255 ou max !";
-                }
+                    $errors['identifiantError'] = "votre identifiant n'est pas valide !";
+                } 
             } else {
-                $errors['emailError'] = "Entrer une email valide !";
+                $errors["passwordError"] = "Confirmer que le mote de passe contient :<br> au moins 1 caractère en majuscule, en minuscule, un muméro, caractère spéciaux, 8 caractère au min, 255 ou max !";
             }
         } else {
             $errors['champVide'] = "un ou plusieurs champs de formulaire sont vide !";
-        }
-        // on ferme la connexion
-        $usersModel->closeConnection();
+        }  
     }
+    // on ferme la connexion
+    $usersModel->closeConnection();
 
     if (isset($_SESSION["user_inscrit"])) {
         $user_inscrit = $_SESSION["user_inscrit"];
@@ -81,8 +78,8 @@
                 <!-- ajouter les attributes (aria-describedby et ...) pour aides les gens -->
                 <form action="" method="post" class="row-box flex-c">
                     <div class="inp-box">
-                        <label for="email">Email</label>
-                        <input class="inp" type="email" name="email" id="email" value="<?php echo isset($_POST['email']) ? $_POST['email'] : ""?> "maxlength="255" required>
+                        <label for="login">login</label>
+                        <input class="inp" type="login" name="login" id="login" value="<?php echo isset($_POST['login']) ? $_POST['login'] : ""?> "maxlength="255" required>
                     </div>
                     <div class="inp-box">
                         <label for="password">Password</label><!-- <a href="#">Forgot?</a> -->
@@ -91,7 +88,7 @@
                     <div class="inp-box">
                         <input class="inp" type="submit" value="Sign In" name="submit" id="submit">
                     </div>
-                    <?php echo "<p class='error-msg'>".$errors['emailError']."</p>";?>
+                    <?php echo "<p class='error-msg'>".$errors['loginError']."</p>";?>
                     <?php echo "<p class='error-msg'>".$errors['identifiantError']."</p>";?>
                     <?php echo "<p class='error-msg'>".$errors['champVide']."</p>";?>
                     <?php echo "<p class='error-msg'>".$errors['passwordError']."</p>";?>

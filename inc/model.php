@@ -65,17 +65,17 @@
     class ModelUsers extends Connection {
         public $tbname = "utilisateurs";
 
-        public function userConnected($email, $password) {
-            $request = $this->db->prepare("SELECT * FROM ". $this->getTableName() ." WHERE password=:password &&email=:email");
-            $request->bindValue("email", $email);
+        public function userConnected($login, $password) {
+            $request = $this->db->prepare("SELECT * FROM ". $this->getTableName() ." WHERE password=:password && login=:login");
+            $request->bindValue("login", $login);
             $request->bindValue("password", $password);
             $request->execute();
             return $request->fetchObject(); // return un object s'il exist ou rien s'il n'est pas inscrit déja
         }   
 
-        public function isExist($email) {
-            $sth = $this->db->prepare("SELECT * FROM ". $this->getTableName() ." WHERE email = :email");
-            $sth->bindValue("email", $email);
+        public function isExist($login) {
+            $sth = $this->db->prepare("SELECT * FROM ". $this->getTableName() ." WHERE login = :login");
+            $sth->bindValue("login", $login);
             $sth->execute();
             return !empty($sth->fetch());
         }
@@ -100,20 +100,21 @@
 
 
         // ------------- Setters ------------- -
-        function setUser($username, $email, $password, $role = "user") {
-            $request = $this->db->prepare("INSERT INTO ". $this->getTableName() ."(username, email, password, role) VALUES(?, ?, ?, ?)");
-            $request->bindParam(1, $username);
-            $request->bindParam(2, $email);
-            $request->bindParam(3, $password);
-            $request->bindParam(4, $role);
+        function setUser($nom, $prenom, $login, $password,) {
+            $request = $this->db->prepare("INSERT INTO ". $this->getTableName() ."(login, nom, prenom, password) VALUES(?, ?, ?, ?)");
+            $request->bindParam(2, $nom);
+            $request->bindParam(3, $prenom);
+            $request->bindParam(1, $login);
+            $request->bindParam(4, $password);
             $request->execute();
             return $request->fetch(PDO::FETCH_ASSOC);
         }
         // pour modifier le profile
-        public function updateProfile($nouveauNom, $nouveauEmail, $nouveauPassword, $nouveauMetier, $nouveauPresentation) {
-            $request = $this->db->prepare("UPDATE ". $this->getTableName() ." SET username = :nouveauNom, email = :nouveauEmail, password = :nouveauPassword, job = :nouveauMetier, presentation = :nouveauPresentation WHERE id= :idUserCurrent");
-            $request->bindValue("nouveauNom", $this->isEmpty($nouveauNom, $_SESSION['login']->username));
-            $request->bindValue("nouveauEmail", $this->isEmpty($nouveauEmail, $_SESSION['login']->email));
+        public function updateProfile($nouveauNom, $nouveauPrenom, $nouveaulogin, $nouveauPassword, $nouveauMetier, $nouveauPresentation) {
+            $request = $this->db->prepare("UPDATE ". $this->getTableName() ." SET nom = :nouveauNom, prenom = :nouveauPrenom, login = :nouveaulogin, password = :nouveauPassword, job = :nouveauMetier, presentation = :nouveauPresentation WHERE id= :idUserCurrent");
+            $request->bindValue("nouveauNom", $this->isEmpty($nouveauNom, $_SESSION['login']->nom));
+            $request->bindValue("nouveauPrenom", $this->isEmpty($nouveauPrenom, $_SESSION['login']->prenom));
+            $request->bindValue("nouveaulogin", $this->isEmpty($nouveaulogin, $_SESSION['login']->login));
             $request->bindValue("nouveauPassword", $this->isEmpty($nouveauPassword, $_SESSION['login']->password));
             $request->bindValue("nouveauMetier", $this->isEmpty($nouveauMetier, $_SESSION['login']->job));
             $request->bindValue("nouveauPresentation", $this->isEmpty($nouveauPresentation, $_SESSION['login']->presentation));    
