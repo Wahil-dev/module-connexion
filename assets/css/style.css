@@ -548,3 +548,34 @@ main {
 /* --- End style edit-profile --- */
 
 /* ---------- End Présentation Style ----------- */
+
+
+
+/* ---------- Start Afficher_users Style ----------- */
+.content .box-content {
+    text-align: center;
+    padding: 50px;
+}
+
+.content .box-content table {
+    background-color: #dededf;
+    width: 100%;
+    border-spacing: 0;
+}
+
+.content .box-content table th {
+    background-color: #3B5998;
+    color: white;
+}
+
+.content .box-content table :is(th, td) {
+    padding: 10px;
+}
+/* ---------- Start Afficher_users Style ----------- */
+
+
+/* ---------- Start Index Page Style ----------- */
+.main {
+    
+}
+/* ---------- End Index Page Style ----------- */
