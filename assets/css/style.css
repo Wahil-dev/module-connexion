@@ -576,6 +576,7 @@ main {
 
 /* ---------- Start Index Page Style ----------- */
 .main {
-    
+    padding: 50px;
+    text-align: center;
 }
 /* ---------- End Index Page Style ----------- */

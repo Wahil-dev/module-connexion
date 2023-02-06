@@ -1,14 +1,11 @@
 <?php 
-    require_once("../inc/config.php");
+    require_once("config.php");
     include $pathInclude."inc/model.php";
     $usersModel = new ModelUsers();
 
     // redirection path if connected
     if(isConnected()) {
-        if(isConnected() != "users") {
-            header("location: ".$pathLien.isConnected()."/index.php");
-            exit();
-        }
+        // rien
     } else {
         header("location: ".$pathLien."index.php");
         exit();

@@ -23,7 +23,9 @@
 <body>
     <div class="content">
         <?php require_once($pathInclude."inc/header.php");?>
-        <h1>Acceuil Users</h1>
+        <main class="main">
+            <h1>Acceuil visiteurs</h1>
+        </main>
     </div>
     <?php
         include $pathInclude."inc/footer.php";

@@ -13,10 +13,11 @@
                         <?php if(isConnected()=="admin") :?>
                             <li><a href="<?php echo $pathLien?>admin/index.php">Acceuil</a></li>
                             <li><a href="<?php echo $pathLien?>admin/afficher_users.php">afficher_users</a></li>
+                            <li><a href="<?php echo $pathLien?>inc/profile.php">Profile</a></li>
                             <li><a href="?logout">déconnexion</a></li>
                         <?php else :?>
                             <li><a href="<?php echo $pathLien?>users/index.php">Acceuil</a></li>
-                            <li><a href="<?php echo $pathLien?>users/profile.php">Profile</a></li>
+                            <li><a href="<?php echo $pathLien?>inc/profile.php">Profile</a></li>
                             <li><a href="?logout">déconnexion</a></li>
                         <?php endif ?>
                     <?php else :?>
