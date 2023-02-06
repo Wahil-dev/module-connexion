@@ -7,6 +7,9 @@
             header("location: ".$pathLien.isConnected()."/index.php");
             exit();
         }
+    } else {
+        header("location: ".$pathLien."index.php");
+        exit();
     }
 
     // pour la déconnexion

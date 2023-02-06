@@ -1,3 +1,14 @@
+@media screen and (max-width: 1200px) {
+    /* ---- Start Présentation Style ---- */
+    .presentation .container .info-box {
+        width: 500px;
+    }
+
+    /* ---- End Présentation Style ---- */
+
+}
+
+
 @media screen and (max-width: 992px) {
     .content .container-panel {
         grid-template-columns: repeat(12, 1fr);
@@ -14,6 +25,23 @@
         width: 250px;
         line-height: 1.4;
     }
+    
+
+    /* ---- Start Présentation Style ---- */
+    .presentation .container .img-box {
+    
+    }
+
+    .presentation .container .info-box {
+        width: 100%;
+    }
+
+    
+    .edit-profile .container .edit-form  .box-edit-form {
+        width: 45%;
+    }
+
+    /* ---- End Présentation Style ---- */
     
 }
 

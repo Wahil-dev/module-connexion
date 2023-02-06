@@ -15,6 +15,7 @@
                             <li><a href="?logout">déconnexion</a></li>
                         <?php else :?>
                             <li><a href="<?php echo $pathLien?>users/index.php">Acceuil</a></li>
+                            <li><a href="<?php echo $pathLien?>users/profile.php">Profile</a></li>
                             <li><a href="?logout">déconnexion</a></li>
                         <?php endif ?>
                     <?php else :?>

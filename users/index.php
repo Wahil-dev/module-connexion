@@ -7,6 +7,9 @@
             header("location: ".$pathLien.isConnected()."/index.php");
             exit();
         }
+    } else {
+        header("location: ".$pathLien."index.php");
+        exit();
     }
 
     // pour la déconnexion
@@ -22,5 +25,8 @@
         <?php require_once($pathInclude."inc/header.php");?>
         <h1>Acceuil Users</h1>
     </div>
+    <?php
+        include $pathInclude."inc/footer.php";
+    ?>
 </body>
 </html>

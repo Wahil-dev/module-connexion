@@ -15,5 +15,8 @@
         <?php require_once($pathInclude."inc/header.php");?>
         <h1>Acceuil visiteurs</h1>
     </div>
+    <?php
+        include $pathInclude."inc/footer.php";
+    ?>
 </body>
 </html>
