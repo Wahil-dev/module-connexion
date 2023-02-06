@@ -20,18 +20,15 @@
     }
 
     // si l'utilisateur taper sur le button submit
-    if(isset($_POST["nName"], $_POST["nlogin"], $_POST["nPassword"], $_POST["nMetier"], $_POST["nPresentation"])) {
+    if(isset($_POST["nName"], $_POST["nPrenom"], $_POST["nLogin"], $_POST["nPassword"])) {
         $nouveauNom = $_POST["nName"];
         $nouveauPrenom = $_POST["nPrenom"];
         $nouveauLogin = $_POST["nLogin"];
         $nouveauPassword = $_POST["nPassword"];
-        $nouveauMetier = $_POST["nMetier"];
-        $nouveauPresentation = $_POST["nPresentation"];
         // executer la modification
-        $usersModel->updateProfile($nouveauNom, $nouveauPrenom, $nouveauLogin, $nouveauPassword, $nouveauMetier, $nouveauPresentation);
+        $usersModel->updateProfile($nouveauNom, $nouveauPrenom, $nouveauLogin, $nouveauPassword);
         $_SESSION["login"] = $usersModel->getUserDataById($_SESSION["login"]->id);
-        header("refresh:0");
-        exit();
+
     }
 ?>
 <!DOCTYPE html>
@@ -76,21 +73,14 @@
                             <input type="login" name="nLogin" id="nLogin" class='inp-edit-form'>
                         </div>
 
-                        <div class='box-edit-form'>
-                            <label for="nMetier">Nouveau Métier :</label>
-                            <input type="text" name="nMetier" id="nMetier" class='inp-edit-form' >
-                        </div>
+
                         <div class='box-edit-form'>
                             <label for="nPassword">Nouveau Password :</label>
                             <input type="password" name="nPassword" id="nPassword" class='inp-edit-form' >
                         </div>
-                        <div class="box-txt-area">
-                            <h4>A Propos de moi :</h4>
-                            <textarea name="nPresentation" id="nPresentation" cols="90" rows="10" class='inp-edit-form'></textarea>
-                        </div>
 
                         <div class='box-btn'>
-                            <input type="submit" value='update' class='btn-custom'>
+                            <input type="submit" value='update' class='btn-panel'>
                         </div>
                     </form>
                 </div>

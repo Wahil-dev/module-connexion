@@ -110,14 +110,12 @@
             return $request->fetch(PDO::FETCH_ASSOC);
         }
         // pour modifier le profile
-        public function updateProfile($nouveauNom, $nouveauPrenom, $nouveauLogin, $nouveauPassword, $nouveauMetier, $nouveauPresentation) {
-            $request = $this->db->prepare("UPDATE ". $this->getTableName() ." SET nom = :nouveauNom, prenom = :nouveauPrenom, login = :nouveauLogin, password = :nouveauPassword, job = :nouveauMetier, presentation = :nouveauPresentation WHERE id= :idUserCurrent");
+        public function updateProfile($nouveauNom, $nouveauPrenom, $nouveauLogin, $nouveauPassword) {
+            $request = $this->db->prepare("UPDATE ". $this->getTableName() ." SET nom = :nouveauNom, prenom = :nouveauPrenom, login = :nouveauLogin, password = :nouveauPassword WHERE id= :idUserCurrent");
             $request->bindValue("nouveauNom", $this->isEmpty($nouveauNom, $_SESSION['login']->nom));
             $request->bindValue("nouveauPrenom", $this->isEmpty($nouveauPrenom, $_SESSION['login']->prenom));
             $request->bindValue("nouveauLogin", $this->isEmpty($nouveauLogin, $_SESSION['login']->login));
             $request->bindValue("nouveauPassword", $this->isEmpty($nouveauPassword, $_SESSION['login']->password));
-            $request->bindValue("nouveauMetier", $this->isEmpty($nouveauMetier, $_SESSION['login']->job));
-            $request->bindValue("nouveauPresentation", $this->isEmpty($nouveauPresentation, $_SESSION['login']->presentation));    
 
             $request->bindValue("idUserCurrent", $_SESSION['login']->id);
             $request->execute();

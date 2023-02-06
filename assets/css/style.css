@@ -62,7 +62,7 @@
     -moz-border-radius: 5px;
     -ms-border-radius: 5px;
     -o-border-radius: 5px;
-    float: left;
+    float: right;
     outline: none;
     border: none;
     cursor: pointer;
