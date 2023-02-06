@@ -1,0 +1,87 @@
+@media screen and (max-width: 992px) {
+    .content .container-panel {
+        grid-template-columns: repeat(12, 1fr);
+        grid-template-areas: 
+        "sideBare sideBare ContentPanel ContentPanel ContentPanel ContentPanel ContentPanel ContentPanel ContentPanel ContentPanel ContentPanel ContentPanel "
+        ;
+    }
+
+    .content .container-panel .box-content-panel {
+        margin: 0 20px;
+    }
+
+    .content .container-panel .box-content-panel .content-panel table .post-title {
+        width: 250px;
+        line-height: 1.4;
+    }
+    
+}
+
+@media screen and (max-width: 768px) {
+    /* ----- Start Style container-panel ----- */
+    .content .container-panel {
+        grid-template-rows: 117px auto;
+        grid-template-columns: repeat(12, 1fr);
+        grid-template-areas: 
+        "sideBare sideBare sideBare sideBare sideBare sideBare sideBare sideBare sideBare sideBare sideBare sideBare "
+        "ContentPanel ContentPanel ContentPanel ContentPanel ContentPanel ContentPanel ContentPanel ContentPanel ContentPanel ContentPanel ContentPanel ContentPanel "
+        ;
+    }
+    
+    /* --- start sideBare Style --- */
+    .content .container-panel .side-bare {
+    }
+    /* --- End sideBare Style --- */
+
+    .btn-panel {
+        padding: 7px 10px;
+    }
+    /* ----- End Style container-panel ----- */
+}
+
+
+@media screen and (max-width: 568px) {
+    /* ----- Start Style container-panel ----- */
+    
+    /* --- start sideBare Style --- */
+    .content .container-panel .side-bare {
+    }
+    /* --- End sideBare Style --- */
+
+    .content .container-panel .box-content-panel .content-panel table .post-title {
+        width: 200px;
+    }
+    /* ----- End Style container-panel ----- */
+}
+
+
+@media screen and (max-width: 576px) {
+        /* ---------- Start Style Login Page ---------- */
+        .login .container-login {
+            margin: 10px;
+        }
+    
+        .login .container-login .row-box {
+            flex-direction: column;
+            gap: 20px;
+        }
+        
+        .login .container-login .row-box li {
+            width: 100%;
+        }
+        /* ------------- End Style Login Page ------------ */
+}
+
+
+
+@media screen and (max-width: 320px) {
+    :root {
+        --font-primary: .9em;
+    }
+
+    /* ---------- Start Style Login Page ----------- */
+    .login .container-login {
+        width: 100%;
+    }
+    /* ---------- End Style Login Page ------------ */
+}

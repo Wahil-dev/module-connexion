@@ -1,0 +1,324 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@200;300;400;500;600;700;800&family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,400;1,500;1,700&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    font-family: Roboto;
+}
+
+.error-msg {
+    color: red !important;
+    font-size: .8em !important;
+    text-transform: none !important;
+}
+
+.clear {
+    clear: both;
+}
+
+.inp-style {
+    width: 100%;
+    padding: 10px 15px;
+    margin: 10px 0 15px;
+    outline: none;
+    font-size: var(--f-size-primary);
+}
+
+.btn-panel {
+    background-color: var(--bg-btn);
+    font-size: var(--f-size-primary);
+    display: inline-block;
+    padding: 10px 15px;
+    margin: 5px 0;
+    color: white;
+    margin-right: 3px;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    float: left;
+    outline: none;
+    border: none;
+    cursor: pointer;
+}
+.btn-panel:hover {
+    background-color: #1b4753;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+:root {
+    --f-size-primary: clamp(.9em, 2.5vw, 1em);
+    --f-size-title: clamp(1.1em, 2.5vw, 1.4em);
+    --h-header: 65px;
+    /* --- color --- */
+    --m-color: #0A232A;
+    --bg-btn: #285F6B;
+}
+
+.flex-r {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.flex-c {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+/* ---------------- Start Header Style ---------------- */
+.content {
+    text-transform: capitalize;
+}
+
+.content .header-panel {
+    background-color: var(--m-color);
+    color: white;
+    justify-content: space-between;
+    padding: 10px 30px;
+    height: var(--h-header);
+}
+
+.content .header-panel .title {
+    font-size: clamp(1.3em, 2.5vw, 1.8em);
+}
+
+.content .header-panel .nav-panel {
+    font-size: var(--f-size-primary);
+}
+
+.content .header-panel .nav-panel ul .menu-box {
+    position: relative;
+}
+
+.content .header-panel .nav-panel ul .menu-box span {
+    font-size: var(--f-size-primary);
+    cursor: pointer;
+}
+
+.content .header-panel .nav-panel ul .menu-box span i {
+    color: white;
+    margin-right: 5px;
+}
+
+.content .header-panel .nav-panel ul .menu-box #menu {
+    position: absolute;
+    overflow: hidden;
+    transition: .5s;
+    width: 124%;
+    height: 0;
+    left: 0;
+    top: 217%;
+    -webkit-transition: .5s;
+    -moz-transition: .5s;
+    -ms-transition: .5s;
+    -o-transition: .5s;
+}
+
+.content .header-panel .nav-panel ul .menu-box #menu a {
+    font-size: var(--f-size-primary);
+    background-color: #0A232A;
+    display: block;
+    color: white;
+    width: 100%;
+    padding: 10px 19px;
+    transition: .4s;
+    -webkit-transition: .4s;
+    -moz-transition: .4s;
+    -ms-transition: .4s;
+    -o-transition: .4s;
+}
+
+.content .header-panel .nav-panel ul .menu-box #menu a:hover {
+    padding-left: 25px;
+    background-color: var(--bg-btn);
+}
+/* ---------------- End Header Style ------------------ */
+
+
+
+/* ---------------------- Start Style Login Page ----------------------- */
+.login-body {
+    width: 100%;
+    height: 100vh;
+    background-image: url("assets/img/bg-01.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.login {
+    background-color: white;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    width: clamp(500px, 4vh, 680px);
+    height: clamp(550px, 80vh, 694px);
+    margin: 20px;
+}
+
+.login .container-login {
+    width: 80%;
+    gap: clamp(25px, 4vh, 55px);
+    margin: 20px 0;
+}
+
+.login .container-login h1 {
+    color: #555555;
+    font-size: clamp(1.3em, 3.5vh, 2.5em);
+    font-weight: normal;
+    letter-spacing: 1.5px;
+}
+
+.login .container-login .row-box {
+    width: 100%;
+    justify-content: space-between;
+}
+
+.login .container-login .row-box li {
+    width: 48%;
+    height: clamp(40px, 7vh, 60px);
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 1px 5px 0 rgb(0 0 0 / 20%);
+}
+
+.login .container-login .row-box li a {
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    font-size: clamp(1em, 2.5vh, 1.2em);
+    color: white;
+    z-index: 1111;
+    transition: all .4s;
+    -webkit-transition: all .4s;
+    -moz-transition: all .4s;
+    -ms-transition: all .4s;
+    -o-transition: all .4s;
+}
+
+.login .container-login .row-box li a:hover::after {
+    background: linear-gradient(45deg,#00dbde,#fc00ff);
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    animation: opacityTop .4s linear forwards;
+    -webkit-animation: opacityTop .4s linear forwards;
+}
+@keyframes opacityTop {
+    0% {
+        opacity: 0;
+    } 100% {
+        opacity: 1;
+    }
+}
+
+.login .container-login .row-box li:first-child {
+    background-color: #3B5998;
+    color: #ffffff;
+}
+
+.login .container-login .row-box li:last-child {
+    background-color: rgb(255, 255, 255);
+    color: #555555;
+}
+
+.login .container-login .row-box li:last-child a {
+    color: #555555;
+}
+
+.login .container-login .row-box li:last-child a:hover {
+    color: #ffffff;
+}
+
+.login .container-login .row-box img {
+    width: clamp(20px, 4vh, 30px);
+    translate: -15px 0;
+}
+
+
+/* ----- Start Style Form ----- */
+.login .container-login .row-box .inp-box {
+    width: 100%;
+    font-size: var(--font-secondary);
+    color: #555555;
+}
+
+.login .container-login .row-box .inp-box label {
+    display: block;
+    font-weight: bold;
+    letter-spacing: 1px;
+    padding: 5px 0;
+    font-size: clamp(.9em, 2.5vh, 1.2em);
+}
+
+.login .container-login .row-box .inp-box .inp {
+    height: clamp(40px, 7vh, 60px);
+    width: 100%;
+    outline: none;
+    border: 1px solid #e6e6e6;
+    background-color: #F7F7F7;
+    margin: 10px 0;
+    padding: 10px 20px;
+    font-size: var(--font-secondary);
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+
+.login .container-login .row-box .inp-box #submit {
+    background-color: #333333;
+    color: white;
+    z-index: 11111;
+    overflow: hidden;
+}
+
+.login .container-login .row-box .inp-box #submit:hover {
+    cursor: pointer;
+    background: linear-gradient(45deg,#00dbde,#fc00ff);
+}
+/* ----- End Style Form ----- */
+
+.login .container-login p {
+    color: #999;
+    font-size: 15px;
+}
+
+.login .container-login p a {
+    color: #999;
+    font-size: 15px;
+    text-decoration: underline;
+}
+
+.login .container-login a:hover {
+    color: #DB1EFB;
+}
+
+/* ---------------- End Style Login Page ----------------- */
