@@ -118,14 +118,18 @@ a {
     position: absolute;
     overflow: hidden;
     transition: .5s;
-    width: 124%;
+    width: auto;
     height: 0;
-    left: 0;
+    right: 0;
     top: 217%;
     -webkit-transition: .5s;
     -moz-transition: .5s;
     -ms-transition: .5s;
     -o-transition: .5s;
+}
+
+.content .header-panel .nav-panel ul .menu-box #menu li {
+    width: 150px;
 }
 
 .content .header-panel .nav-panel ul .menu-box #menu a {
@@ -134,7 +138,7 @@ a {
     display: block;
     color: white;
     width: 100%;
-    padding: 10px 19px;
+    padding: 10px 20px;
     transition: .4s;
     -webkit-transition: .4s;
     -moz-transition: .4s;

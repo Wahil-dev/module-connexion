@@ -7,10 +7,16 @@
     <nav class="nav-panel">
         <ul name="menuPanel" id="menuPanel">
             <li class="menu-box">
-                <span id="openMenu"><i class="fa-solid fa-user"></i>wahil chettouf</span>
+                <span id="openMenu"><i class="fa-solid fa-user"></i><?php echo isset($_SESSION["login"]) ? $_SESSION["login"]->username : 'menuBar ' ?></span>
                 <ul id="menu" class="ul-in-ul">
                     <?php if(isConnected()) :?>
-                        
+                        <?php if(isConnected()=="admin") :?>
+                            <li><a href="<?php echo $pathLien?>admin/index.php">Acceuil</a></li>
+                            <li><a href="?logout">déconnexion</a></li>
+                        <?php else :?>
+                            <li><a href="<?php echo $pathLien?>users/index.php">Acceuil</a></li>
+                            <li><a href="?logout">déconnexion</a></li>
+                        <?php endif ?>
                     <?php else :?>
                         <li><a href="<?php echo $pathLien?>index.php">Acceuil</a></li>
                         <li><a href="<?php echo $pathLien?>connexion.php">Connexion</a></li>
