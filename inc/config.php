@@ -4,10 +4,10 @@
 
     function isConnected() {
         if(isset($_SESSION["login"])) {
-            if($_SESSION["login"]->username == "admin") {
+            if($_SESSION["login"]->login == "admin") {
                 return "admin";
             } else {
-                return 'user';
+                return 'users';
             }
         } else {
             return false;

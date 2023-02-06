@@ -3,11 +3,11 @@
 ?>
 
 <header class="header-panel flex-r">
-    <h1 class="title"><?php echo isset($_SESSION["login"]) ? $_SESSION["login"]->username : 'Acceuil ' ?>Page</h1>
+    <h1 class="title"><?php echo isset($_SESSION["login"]) ? $_SESSION["login"]->login : 'Acceuil ' ?>Page</h1>
     <nav class="nav-panel">
         <ul name="menuPanel" id="menuPanel">
             <li class="menu-box">
-                <span id="openMenu"><i class="fa-solid fa-user"></i><?php echo isset($_SESSION["login"]) ? $_SESSION["login"]->username : 'menuBar ' ?></span>
+                <span id="openMenu"><i class="fa-solid fa-user"></i><?php echo isset($_SESSION["login"]) ? $_SESSION["login"]->login : 'menuBar ' ?></span>
                 <ul id="menu" class="ul-in-ul">
                     <?php if(isConnected()) :?>
                         <?php if(isConnected()=="admin") :?>

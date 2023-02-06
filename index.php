@@ -1,5 +1,11 @@
 <?php 
+    session_start();
     require_once("inc/config.php");
+    // redirection path if connected
+    if(isConnected()) {
+        header("location: ".$pathLien.isConnected()."/index.php");
+        exit();
+    }
 ?>
 <!DOCTYPE html>
 <html lang="fr-FR">

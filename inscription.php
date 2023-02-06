@@ -3,14 +3,10 @@
     include $pathInclude."inc/model.php";
     $usersModel = new ModelUsers();
 
-    if(isset($_SESSION["login"])) {
-        if($_SESSION["login"]->role == "user") {
-            header("location: ".$pathLien."users/index.php");
-            exit();
-        } else {
-            header("location: ".$pathLien."admin/index.php");
-            exit();
-        }
+    // redirection path if connected
+    if(isConnected()) {
+        header("location: ".$pathLien.isConnected()."/index.php");
+        exit();
     }
 
     // tableaux d'erreurs
@@ -44,7 +40,7 @@
                     if(!$usersModel->isExist($login)) {
                         // si tout est bon mais il y'a des problème coté serveur, database ...
                         if(!$usersModel->setUser($nom, $prenom, $login, $password)) {
-                            $_SESSION["user_inscrit"] = $nom;
+                            $_SESSION["user_inscrit"] = $login;
                             header("location: ". $pathLien."connexion.php");
                             exit();
                         } else {

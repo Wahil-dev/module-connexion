@@ -9,6 +9,13 @@
         "champVide" => "",
     ];
 
+    // redirection path if connected
+    if(isConnected()) {
+        header("location: ".$pathLien.isConnected()."/index.php");
+        exit();
+    }
+
+
     if(isset($_SESSION["login"])) {
         if($_SESSION["login"]->role == "user") {
             header("location: ".$pathLien."users/index.php");
@@ -79,7 +86,7 @@
                 <form action="" method="post" class="row-box flex-c">
                     <div class="inp-box">
                         <label for="login">login</label>
-                        <input class="inp" type="login" name="login" id="login" value="<?php echo isset($_POST['login']) ? $_POST['login'] : ""?> "maxlength="255" required>
+                        <input class="inp" type="login" name="login" id="login" value="<?php echo isset($_POST['login']) ? $_POST['login'] : ""?>"maxlength="255" required>
                     </div>
                     <div class="inp-box">
                         <label for="password">Password</label><!-- <a href="#">Forgot?</a> -->

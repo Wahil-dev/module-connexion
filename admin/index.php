@@ -1,14 +1,26 @@
+<?php 
+    session_start();
+    require_once("../inc/config.php");
+    // redirection path if connected
+    if(isConnected()) {
+        if(isConnected() != "admin") {
+            header("location: ".$pathLien.isConnected()."/index.php");
+            exit();
+        }
+    }
+
+    // pour la déconnexion
+    if(isset($_GET["logout"])) {
+        require_once($pathInclude."inc/logout.php");
+    }
+?>
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>admin</title>
-</head>
+<html lang="fr-FR">
+    <?php require_once($pathInclude."inc/head.php");?>
 <body>
     <div class="content">
-        <h1>Admin</h1>
+        <?php require_once($pathInclude."inc/header.php");?>
+        <h1>Acceuil Admin</h1>
     </div>
 </body>
 </html>
