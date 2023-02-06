@@ -349,3 +349,92 @@ a {
 }
 
 /* ---------------- End Style Login Page ----------------- */
+
+
+/* ---------------------- Start Style Register Page ----------------------- */
+.register-body {
+    width: 100%;
+    height: 100vh;
+    background: #f2d6eb;
+}
+
+.register-body .register {
+    width: 445px;
+    min-height: 694px;
+    height: auto;
+    background: #3C3D47;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    margin: 15px;
+}
+
+.register-body .register .container-register {
+    width: 80%;
+    gap: 20px;
+    color: white;
+    padding: 0;
+}
+
+.register-body .register .container-register img {
+    width: 100px;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+
+.register-body .register .container-register h3 {
+    font-weight: 100;
+    font-size: clamp(.9em, 2.5vw, 1.2em);
+}
+
+.register-body .register .container-register .register-form {
+    width: 100%;
+}
+
+.register-body .register .container-register .register-form .form-group {
+    width: 100%;
+    margin: 20px 0;
+}
+
+.register-body .register .container-register .register-form .form-group label {
+    display: block;
+    margin: 13px 0;
+    font-size: clamp(.6em, 2.5vw, .8em);
+    font-weight: 400;
+}
+
+.register-body .register .container-register .register-form .form-group input {
+    width: 100%;
+    height: clamp(35px, 2.5vw, 50px);
+    font-size: clamp(.8em, 2.5vw, .8em);
+    padding: 10px 20px;
+    outline: none;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    -webkit-border-radius: 50px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+    background: #3C3D47;
+    color: white;
+}
+
+.register-body .register .container-register .register-form .form-group input[type="submit"] {
+    background-color: #01D28E;
+    cursor: pointer;
+}
+
+.register-body .register .container-register p {
+    font-size: clamp(.8em, 2.5vw, .9em);
+    color: #8a8a8f;
+}
+
+.register-body .register .container-register p a {
+    color: #01D28E;
+}
+/* ---------------------- End Style Register Page ----------------------- */

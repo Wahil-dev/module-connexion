@@ -96,7 +96,7 @@
                     <?php echo "<p class='error-msg'>".$errors['champVide']."</p>";?>
                     <?php echo "<p class='error-msg'>".$errors['passwordError']."</p>";?>
                 </form>
-                <p>Not a member? <a href="register.php">Sign up now</a></p>
+                <p>Not a member? <a href="<?php echo $pathLien?>inscription.php">Sign up now</a></p>
             </div>
         </section>
     </body>

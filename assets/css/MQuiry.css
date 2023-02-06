@@ -37,6 +37,17 @@
         padding: 7px 10px;
     }
     /* ----- End Style container-panel ----- */
+
+    
+    /* --------------- Start Style Register Page -------------- */
+    .register-body .register {
+        width: 510px;
+    }
+
+    .register-body .register .container-register {
+        width: 90%;
+    }
+    /* --------------- End Style Register Page -------------- */
 }
 
 

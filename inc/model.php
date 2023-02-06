@@ -11,7 +11,7 @@
             $this->severname = "localhost";
             $this->user = "root";
             $this->pass = "";
-            $this->dbname = "wahil";
+            $this->dbname = "moduleconnexion";
             //$this->tbname = $tbname;
             try {
                 $this->db = new PDO("mysql:host=".$this->severname."; dbname=".$this->dbname."; charset=utf8",$this->user, $this->pass);
@@ -63,7 +63,7 @@
     }
 
     class ModelUsers extends Connection {
-        public $tbname = "users";
+        public $tbname = "utilisateurs";
 
         public function userConnected($email, $password) {
             $request = $this->db->prepare("SELECT * FROM ". $this->getTableName() ." WHERE password=:password &&email=:email");
